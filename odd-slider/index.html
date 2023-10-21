@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd Slider</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="slider-container">
+        <div class="slider-bar"></div>
+        <svg class="slider-progress" viewBox="0 0 51 6">
+            <path class="progress-path" xmlns="http://www.w3.org/2000/svg" d="M 13 3 L 20.5 3 Q 22 3 23 1" stroke="#5a38e0" 
+            stroke-width="1" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="slider-circle" style="transform: translate(-50%, -50%) translateX(-2.5rem); top: 1em;">
+            <div class="slider-text">0</div>
+        </div>
+        <input type="range" class="slider" value="400" min="-400" max="1400">
+    </div>     
+    <script src="main.js"></script>
+  </body>
+</html>
