@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --size: 100;
+    --unit: calc((var(--size) / 300) * 1vmin);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c1f2ee;
+}
+
+.container {
+    height: calc(250 * var(--unit));
+    width: calc(250 * var(--unit));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container svg {
+    height: 100%;
+}
+
+.container .liquid {
+    position: absolute;
+    bottom: 4.7%;
+    width: calc(171 * var(--unit));
+    height: calc(171 * var(--unit));
+    border-radius: 50%;
+    overflow: hidden;
+    animation: wave 6s ease-in-out infinite;
+    background: linear-gradient(
+        180deg,
+        rgba(233, 73, 210, 1) 0%,
+        rgba(162, 60, 209, 1) 23%,
+        rgba(118, 4, 190, 1) 58%,
+        rgba(72, 26, 120, 1) 84%,
+        rgba(29, 8, 62, 1) 100%
+    );
+    opacity: 0.8;
+}
+
+.container .liquid .bubble {
+    width: calc(5 * var(--unit));
+    height: calc(5 * var(--unit));
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5%;
+    border: 1px solid white;
+}
+
+@keyframes wave {
+    0%,
+    100% {
+        clip-path: polygon(
+            0 13%,
+            6% 9%,
+            12% 8%,
+            19% 8%,
+            26% 10%,
+            33% 15%,
+            42% 22%,
+            52% 30%,
+            59% 33%,
+            66% 35%,
+            77% 35%,
+            85% 33%,
+            90% 32%,
+            100% 28%,
+            100% 100%,
+            0% 100%
+        );
+    }
+    50% {
+        clip-path: polygon(
+            0 33%,
+            9% 34%,
+            18% 34%,
+            28% 32%,
+            36% 28%,
+            43% 23%,
+            51% 18%,
+            59% 13%,
+            66% 10%,
+            75% 7%,
+            84% 6%,
+            91% 7%,
+            96% 10%,
+            100% 14%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
