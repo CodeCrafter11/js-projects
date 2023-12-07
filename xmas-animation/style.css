@@ -1,0 +1,40 @@
+html, body {
+    margin:0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(180,186,214,1) 0%, rgba(232,203,192,1) 100%);
+}
+  
+.header {text-align: center; margin: 30px 0;}
+.social a img { height: 1.5em; }
+
+.content {
+    text-align: center;
+    width: 100%;
+}
+
+svg {
+    max-width: 575px;
+}
+
+#canvas {
+    border-radius: 50%;
+    position: relative;
+    width: 310px;
+    height: 290px;
+    top: 10px;
+    left: 0px;
+}
+
+.canvas_container {
+    position: absolute;
+    width: 100%;
+}
+
+.draw_container {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+}
