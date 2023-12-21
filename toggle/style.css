@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    background-color: hsl(209, 76%, 6%);
+    --on-color: hsl(208.7, 100%, 50%);
+    --off-color: hsl(208.7, 100%, 90%);
+    --toggle-bg: hsl(208.7, 40%, 20%);
+    --toggle-gap: 10px;
+    --toggle-width: 160px;
+    --transition-color: var(--off-color);
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .toggle {
+    position: relative;
+    cursor: pointer;
+    background: var(--toggle-bg);
+    width: var(--toggle-width);
+    height: calc(var(--toggle-width) / 2);
+    border-radius: 160px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 2px #7c7e8855;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .toggle input {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .toggle input:checked ~ svg .outline {
+    --transition-color: var(--on-color);
+  }
+  
+  .off-knob,
+  .on-knob {
+    position: absolute;
+    height: calc(100% - var(--toggle-gap) * 2);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0px 1px 1px rgba(10, 19, 39, 0.1),
+      0px 4px 12px rgba(10, 19, 39, 0.03), 0px 4px 20px rgba(10, 19, 39, 0.04);
+    transform-origin: center center;
+    will-change: transform;
+  }
+  
+  .off-knob {
+    left: var(--toggle-gap);
+    background: var(--off-color);
+  }
+  
+  .on-knob {
+    right: var(--toggle-gap);
+    background: var(--on-color);
+    transform: scale(0.1) translateX(430px);
+  }
+  
+  .toggle input:checked ~ .on-knob {
+    animation-delay: 1.1s;
+  }
+  
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .outline {
+    width: 100%;
+    height: 100%;
+    stroke: var(--transition-color);
+    stroke-dasharray: 2 125;
+    stroke-dashoffset: 32.5;
+    stroke-opacity: 0;
+  }
+  
+  .outline--blur {
+    filter: blur(0.8px);
+  }
+  
