@@ -1,0 +1,117 @@
+:root {
+    --base: rgba(0,0,0,0.75);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+  }
+  
+  main {
+    width: min(70vw, 400px);
+    font-family: helevetica, sans-serif;
+    color: var(--base);
+  }
+  
+  .search {
+    display: flex;
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .search input {
+    flex: 1;
+    font-size: 0.8rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0 1rem;
+    color: rgba(0,0,0,0.5);
+  }
+  
+  .search button {
+    background-color: transparent;
+    border: none;
+    padding: 0 1rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  
+  .search .search-icon {
+    font-size: 1rem;
+    color: var(--base);
+  }
+  
+  ::-webkit-input-placeholder {
+    font: 0.8rem helevetica, sans-serif;
+    color: rgba(0,0,0,0.3);
+  }
+  
+  .result {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  
+  .word {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .word h1 {
+    font-size: 2.25rem;
+    color: black;
+  }
+  
+  .word button {
+    display: grid;
+    place-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .word .sound-icon {
+    font-size: 1rem;
+    color: rgba(0,0,0,0.6);
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 0.25rem 0 1.5rem;
+  }
+  
+  .details .phonetic {
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.3);
+    font-style: italic;
+  }
+  
+  .details .pos {
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.7);
+  }
+  
+  .definitions {
+    list-style-type: disc;
+  }
+  
+  .definitions li {
+    font-size: 0.8rem;
+    font-weight: 100;
+    line-height: 1.6;
+    margin: 0 0 1rem 0
+  
