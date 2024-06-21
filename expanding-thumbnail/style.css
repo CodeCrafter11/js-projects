@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  height: 100svh;
+  display: grid;
+  place-items: center;
+}
+
+.thumb {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  background-image: url('https://i.imgur.com/acAWVIC.jpeg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.3s, height 0.6s;  
+
+  & :where(h2,p) {
+    position: absolute;
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  & h2 {
+    top: 6rem;
+    left: 2rem;
+    font: 3rem 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: rgba(210,53,131,0.75);
+    transform: translateX(-200%);
+  }
+
+  & p {
+    top: 9.5rem;
+    left: 4.15rem;
+    font: italic 0.7rem helvetica, sans-serif;
+    color: rgba(255,255,255,0.55);
+    transform: translateX(200%);
+  }
+}
+
+.thumb.expand {
+  width: 475px;
+  height: 475px;
+}
+
+.thumb.show :where(h2, p) {
+  transform: translateX(0);
+  opacity: 1;
+}
