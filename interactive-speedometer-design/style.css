@@ -1,0 +1,42 @@
+body {
+    box-sizing: border-box;
+    background-color: #111;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+  }
+  .svg-container {
+    position: relative;
+  }
+  #speed {
+    color: white;
+    font-size: 36px;
+    line-height: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    bottom: 25px;
+    z-index: 1;
+  }
+  #meter-bg-bar {
+    animation: dash 4s linear forwards infinite;
+    stroke-dasharray: 615;
+  }
+  @keyframes dash {
+    0%,
+    100% {
+      stroke-dashoffset: 615;
+    }
+    25% {
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dashoffset: 307.5;
+    }
+    75% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
