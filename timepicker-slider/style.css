@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7rem;
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-container {
+    position: relative;
+    width: 900px;
+    height: 450px;
+    overflow: hidden;
+}
+.filter {
+    content: '';
+    position: absolute;
+    background-color: rgb(162, 210, 255);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: all .2s;
+    z-index: -1;
+    background-size: 100% 800%;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(162, 210, 255) 15%,
+        rgb(226, 70, 161) 40%,
+        rgb(123, 77, 230) 50%,
+        rgb(25, 26, 87) 60%,
+        rgb(25, 26, 87) 100%
+    );
+    background-position: 0% 0%;
+    background-repeat: repeat-y;
+}
+
+.time {
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sun {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(255, 230, 0);
+    border-radius: 50%;
+    position: absolute;
+    transform-origin: center;
+    top: 450px;
+    left: 0px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 230, 0);
+    box-shadow: inset -2px -5px 5px rgb(204, 156, 0), 
+        inset 2px 5px 5px rgb(255, 246, 168);
+}
+
+.moon {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    transform-origin: center;
+    top: 450px;
+    left: 0px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(215, 223, 233);
+    box-shadow: inset -2px -5px 5px rgb(112, 140, 175), 
+        inset 2px 5px 5px rgb(237, 241, 245);
+}
+
+.crater {
+    background-color: rgb(158, 176, 197);
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 2px rgb(133, 156, 185);
+    transition: all .5s;
+}
+.crater--1 {
+    height: 15px;
+    width: 15px;
+    top: 20px;
+    left: 30px;
+}
+.crater--2 {
+    height: 32px;
+    width: 32px;
+    top: 45px;
+    left: 25px;
+}
+.crater--3 {
+    height: 22px;
+    width: 22px;
+    top: 20px;
+    right: 15px;
+}
+.crater--night {
+    opacity: 1;
+}
+
+.sun-path {
+    color: rgba(255, 255, 255, 0.219);
+    stroke-width: 20;
+}
+
+/* Stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    opacity: 1;
+    transition: all 1s;
+}
+.star {
+    position: absolute;
+    background-color: white;
+    clip-path: polygon(50% 0, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0 50%, 35% 35%);
+    transition: all .5s;
+    height: 20px;
+    width: 20px;
+    opacity: .6;
+    animation: sparkle 3s linear .5s infinite;
+}
+.star-round {
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    opacity: .6;
+    transition: all .5s;
+}
+
+@keyframes sparkle {
+    0% { opacity: .6; }
+    50% { opacity: .8; }
+    100% { opacity: .6; }
+}
+
+/* Clouds */
+.clouds {
+    opacity: 1;
+    transition: all 3s;
+}
+.cloud {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    height: 50px;
+    width: 300px;
+    border-radius: 45px;
+    transition: all 2s;
+}
+.cloud::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+    left: 20px;
+    top: -20px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    box-shadow: 
+        35px -8px currentColor,
+        70px -22px currentColor,
+        100px -18px currentColor,
+        140px -25px currentColor,
+        180px -12px currentColor,
+        210px -1px currentColor;
+}
+
+.cloud--1 {
+    top: 120px;
+    left: 60px;
+    opacity: .6;
+}
+.cloud--2 {
+    top: 90px;
+    left: 120px;
+    opacity: .4;
+    transform: scaleY(1.1);
+}
+.cloud--3 {
+    top: 160px;
+    right: 60px;
+    opacity: .6;
+}
+.cloud--4 {
+    bottom: 80px;
+    right: 250px;
+    opacity: .4;
+    transform: scaleY(1.4);
+}
+.cloud--5 {
+    bottom: 50px;
+    right: 200px;
+    opacity: .6;
+}
+.cloud--6 {
+    bottom: 80px;
+    left: -20px;
+    opacity: .4;
+}
+
+/* Night Transitions */
+.slider-container--evening > .stars {
+    transform: translateY(0);
+    opacity: .5;
+}
+.slider-container--night > .stars {
+    transform: translateY(0);
+    opacity: 1;
+}
+.slider-container--night > .clouds {
+    opacity: 0;
+}
+.slider-container--evening .cloud--1, .slider-container--night .cloud--1 { transform: translateX(-400px); }
+.slider-container--evening .cloud--2, .slider-container--night .cloud--2 { transform: scaleY(1.1) translateX(-450px); }
+.slider-container--evening .cloud--3, .slider-container--night .cloud--3 { transform: translateX(400px); }
+.slider-container--evening .cloud--4, .slider-container--night .cloud--4 { transform: scaleY(1.4) translateX(600px); }
+.slider-container--evening .cloud--5, .slider-container--night .cloud--5 { transform: translateX(600px); }
+.slider-container--evening .cloud--6, .slider-container--night .cloud--6 { transform: translateX(-350px); }
+
+.slider-container--morning .cloud { opacity: .2; }
+
+.slider-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    padding: 10px;
+    z-index: -1;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
