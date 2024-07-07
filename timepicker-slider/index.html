@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timepicker Slider</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="slider-wrapper" id="sliderWrapper">
+        <div class="slider-container" id="sliderContainer">
+            <div class="filter" id="filter"></div>
+            <div class="stars" id="stars"></div>
+            <div class="clouds">
+                <div class="cloud cloud--1"></div>
+                <div class="cloud cloud--2"></div>
+                <div class="cloud cloud--3"></div>
+                <div class="cloud cloud--4"></div>
+                <div class="cloud cloud--5"></div>
+                <div class="cloud cloud--6"></div>
+            </div>
+    
+            <h2 class="time" id="time"></h2>
+    
+            <svg width="900" height="450" xmlns="http://www.w3.org/2000/svg" class="sun-path">
+                <path d="M 0 500 Q 450 -180 900 500" stroke="currentColor" fill="transparent" id="sunpath"/>
+            </svg>
+            <div class="sun" id="sun"></div>
+            <div class="moon" id="moon">
+                <div class="crater crater--1"></div>
+                <div class="crater crater--2"></div>
+                <div class="crater crater--3"></div>
+            </div>
+    
+        </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
