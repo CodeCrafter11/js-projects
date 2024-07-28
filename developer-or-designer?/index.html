@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer or Designer</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="switch">
+      <label class="switch__label" for="occupation" id="developer">Developer</label>
+      <button class="switch__button" type="button" id="occupation" title="Developer or designer?" aria-live="polite" aria-labelledby="developer">
+        <svg class="switch__icon" viewBox="0 0 16 16" width="16px" height="16px" aria-hidden="true">
+          <g fill="none" stroke="hsl(223,10%,10%)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <g class="switch__icon1" transform="translate(1,1)">
+              <polyline class="switch__icon1-1" points="0 0,6 6" stroke-dasharray="8.49 8.49" />
+              <polyline class="switch__icon1-2" points="0 0,0 8.49" stroke-dasharray="8.49 8.49" transform="rotate(-45) translate(0,8.49) rotate(90)" />
+              <polyline class="switch__icon1-3" points="0 0,-6 6" stroke-dasharray="16.98 8.49" stroke-dashoffset="16.98" transform="rotate(-12)" />
+              <polyline class="switch__icon1-4" points="0 0,0 8.49" stroke-dasharray="8.49 16.98" stroke-dashoffset="16.98" transform="rotate(33) translate(0,8.49) rotate(-57)" />
+              <polyline class="switch__icon1-5" points="0 0,0 8" stroke-dasharray="16 8" stroke-dashoffset="16" />
+              <circle class="switch__icon1-6" cx="0" cy="8" r="1" stroke-dasharray="6.29 12.57" stroke-dashoffset="12.57" />
+            </g>
+            <g class="switch__icon2" transform="translate(8,15)">
+              <polyline class="switch__icon2-1" points="0 0,7 0" />
+              <polyline class="switch__icon2-2" points="0 0,0 4" stroke-dasharray="4 4" stroke-dashoffset="4" />
+              <polyline class="switch__icon2-3" points="7 0,7 4" stroke-dasharray="4 4" stroke-dashoffset="4" />
+              <polyline class="switch__icon2-4" points="0 0,7 0" />
+            </g>
+          </g>
+        </svg>
+      </button>
+      <label class="switch__label" for="occupation" id="designer">Designer</label>
+    </div>     
+    <script src="main.js"></script>
+  </body>
+</html>
