@@ -1,0 +1,152 @@
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --hue: 223;
+    --bg: hsl(var(--hue),10%,90%);
+    --fg: hsl(var(--hue),10%,10%);
+    --switch-dev: hsl(223,90%,50%);
+    --switch-des: hsl(283,90%,70%);
+    --trans-dur: 0.3s;
+    --trans-timing: cubic-bezier(0.65,0,0.35,1);
+    font-size: calc(21px + (120 - 21) * (100vw - 280px) / (3840 - 280));
+  }
+  
+  body,
+  button {
+    color: var(--fg);
+    font: 1em/1.5 "DM Sans", sans-serif;
+    transition: background-color var(--trans-dur), color var(--trans-dur);
+  }
+  
+  body {
+    background-color: var(--bg);
+    display: flex;
+    height: 100vh;
+  }
+  
+  .switch {
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+  .switch__button, .switch__icon {
+    display: block;
+  }
+  .switch__button, .switch__label {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .switch__button {
+    background-color: var(--switch-dev);
+    border-radius: 0.5em;
+    box-shadow: 0 -0.0625em 0 hsl(var(--hue), 10%, 80%), 0 0.0625em 0 white;
+    position: relative;
+    width: 3em;
+    height: 1.5em;
+    transition: background-color var(--trans-dur) var(--trans-timing), box-shadow var(--trans-dur);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .switch__button:before {
+    background-color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0.125em 0.125em rgba(0, 0, 0, 0.2);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.25em;
+    left: 0.25em;
+    width: 1em;
+    height: 1em;
+    transition: transform var(--trans-dur) var(--trans-timing);
+  }
+  [dir=rtl] .switch__button:before {
+    right: 0.25em;
+    left: auto;
+  }
+  .switch__button[aria-labelledby=designer] {
+    background-color: var(--switch-des);
+  }
+  .switch__icon {
+    overflow: visible;
+    pointer-events: none;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    width: 0.5em;
+    height: 0.5em;
+  }
+  [dir=rtl] .switch__icon {
+    right: 0.5em;
+    left: auto;
+  }
+  .switch__icon,
+  .switch__icon circle,
+  .switch__icon g,
+  .switch__icon polyline {
+    transition: stroke-dashoffset var(--trans-dur) var(--trans-timing), transform var(--trans-dur) var(--trans-timing);
+  }
+  .switch__icon1 {
+    transform: translate(1px, 1px);
+  }
+  .switch__icon1-2 {
+    transform: rotate(-45deg) translate(0, 8.49px) rotate(90deg);
+  }
+  .switch__icon2 {
+    transform: translate(8px, 15px);
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon, .switch__button[aria-labelledby=designer]:before {
+    transform: translateX(1.5em);
+  }
+  [dir=rtl] .switch__button[aria-labelledby=designer] .switch__icon, [dir=rtl] .switch__button[aria-labelledby=designer]:before {
+    transform: translateX(-1.5em);
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1 {
+    transform: translate(1px, 1px) rotate(-45deg);
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-1, .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-3, .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-4, .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-5, .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-6 {
+    stroke-dashoffset: 0;
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-1 {
+    transform: rotate(12deg);
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-2, .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-4 {
+    stroke-dashoffset: 2.82;
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon .switch__icon1-2 {
+    transform: rotate(-33deg) translate(0, 8.49px) rotate(57deg);
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon .switch__icon2 {
+    transform: translate(7px, 12px) rotate(-45deg);
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon .switch__icon2-1 {
+    transform: translateY(4px);
+  }
+  .switch__button[aria-labelledby=designer] .switch__icon .switch__icon2-2, .switch__button[aria-labelledby=designer] .switch__icon .switch__icon2-3 {
+    stroke-dashoffset: 0;
+  }
+  .switch__label {
+    font-size: 0.75em;
+    line-height: 2;
+    padding-inline-end: 0.75em;
+  }
+  .switch__label ~ .switch__label {
+    padding-inline: 0.75em 0;
+  }
+  
+  /* Dark theme */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: hsl(var(--hue),10%,10%);
+      --fg: hsl(var(--hue),10%,90%);
+    }
+  
+    .switch__button {
+      box-shadow: 0 -0.0625em 0 black, 0 0.0625em 0 hsl(var(--hue), 10%, 20%);
+    }
+  }
