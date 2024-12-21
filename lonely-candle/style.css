@@ -1,0 +1,63 @@
+body{
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  #circle {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: rgba(255, 165, 0, 0.5);
+    font-size: 50px;
+    font-family: Times New Roman;
+    color: rgba(255, 165, 0, 1);
+    cursor: pointer;
+  }
+  
+  .noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+    supported by Chrome and Opera */
+  }
+  
+  
+  /* unvisited link */
+  
+  a:link {
+    color: orange;
+  }
+  
+  
+  /* visited link */
+  
+  a:visited {
+    color: orange;
+  }
+  
+  
+  /* mouse over link */
+  
+  a:hover {
+    color: orange;
+  }
+  
+  
+  /* selected link */
+  
+  a:active {
+    color: orange;
+  }
